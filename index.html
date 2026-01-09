@@ -46,7 +46,7 @@
       margin-bottom: 20px; /* 增加段落间距 */
     }
 
-    /* "Dear xxx" 部分样式 */
+    /* "Dear [Customer Name]" 部分样式 */
     .greeting {
       font-size: 16px; /* 与正文同样的字体大小 */
       margin-bottom: 20px;
@@ -111,8 +111,8 @@
 
   <h1 id="title">Thank You for Visiting Saikang Medical</h1>
 
-  <!-- "Dear [Customer Name]," 左对齐 -->
-  <p class="greeting">Dear [Customer Name],</p>
+  <!-- "Dear [Customer Name]" 左对齐 -->
+  <p class="greeting" id="greeting">Dear [Customer Name],</p>
 
   <div class="intro" id="intro">
     <p>
@@ -131,8 +131,7 @@
     <img src="visit3.JPG" alt="Customer Visit 3">
   </div>
 
-  <!-- 修改后的间距 -->
-  <p class="intro" style="margin-top: 10px;">
+  <p class="intro">
     We look forward to continuing our communication and exploring further opportunities to work together.
   </p>
 
@@ -145,6 +144,7 @@
     </a>
   </div>
 
+  <!-- 修改后的 footer -->
   <footer id="footer">
     © Saikang Medical · Racing Against Time, Healthier Your Life
   </footer>
@@ -166,7 +166,8 @@
         "Thank you very much for taking the time to visit Saikang Medical. It was a great pleasure to welcome you and introduce our facilities, products, and team. We truly appreciated the open and constructive discussions during your visit. Your insights and feedback are highly valuable to us and help strengthen our long-term cooperation.",
       catalogue: "Download Product Catalogue",
       contact: "Contact Our Team",
-      footer: "© Saikang Medical · Racing Against Time, Healthier Your Life"
+      footer: "© Saikang Medical · Racing Against Time, Healthier Your Life",
+      greeting: "Dear [Customer Name],"
     },
     es: {
       title: "Gracias por Visitar Saikang Medical",
@@ -174,7 +175,8 @@
         "Fue un placer recibirle en Saikang Medical. Gracias por tomarse el tiempo de visitarnos y por las valiosas conversaciones. Esperamos construir una cooperación sólida y a largo plazo.",
       catalogue: "Descargar Catálogo de Productos",
       contact: "Contactar con Nuestro Equipo",
-      footer: "© Saikang Medical · Comprometidos con una Mejor Atención Médica"
+      footer: "© Saikang Medical · Racing Against Time, Healthier Your Life",
+      greeting: "Estimado [Customer Name],"
     },
     fr: {
       title: "Merci de Votre Visite chez Saikang Medical",
@@ -182,7 +184,8 @@
         "Ce fut un réel plaisir de vous accueillir chez Saikang Medical. Merci pour votre visite et pour les échanges constructifs. Nous nous réjouissons de développer une coopération durable et fructueuse.",
       catalogue: "Télécharger le Catalogue Produits",
       contact: "Contacter Notre Équipe",
-      footer: "© Saikang Medical · Engagés pour une Meilleure Santé"
+      footer: "© Saikang Medical · Racing Against Time, Healthier Your Life",
+      greeting: "Cher [Customer Name],"
     }
   };
 
@@ -195,6 +198,10 @@
   document.getElementById("catalogueBtn").innerText = content[langKey].catalogue;
   document.getElementById("contactBtn").innerText = content[langKey].contact;
   document.getElementById("footer").innerText = content[langKey].footer;
+  
+  // 设置动态问候语
+  const customerName = "John Doe"; // 替换为客户名称
+  document.getElementById("greeting").innerText = content[langKey].greeting.replace("[Customer Name]", customerName);
 </script>
 
 </body>
