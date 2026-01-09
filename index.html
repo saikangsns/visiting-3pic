@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You for Visiting Saikang Medical</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f6f8fa;
+      color: #333;
+    }
+
+    .container {
+      max-width: 720px;  /* 确保最大宽度一致 */
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 30px 50px;
+    }
+
+    .logo {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .logo img {
+      max-width: 180px; /* 缩小 logo */
+    }
+
+    h1 {
+      text-align: center; /* 标题居中 */
+      font-size: 28px;
+      margin: 0 auto 20px; /* 设置居中，并加一些底部间距 */
+    }
+
+    .intro {
+      text-align: left; /* 正文左对齐 */
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0 auto 40px;
+    }
+
+    .intro p {
+      margin-bottom: 20px; /* 增加段落间距 */
+    }
+
+    /* "Dear xxx" 部分样式 */
+    .greeting {
+      font-size: 16px; /* 与正文同样的字体大小 */
+      margin-bottom: 20px;
+      text-align: left; /* 左对齐 */
+      font-weight: normal; /* 不加粗 */
+    }
+
+    /* 图片样式 */
+    .photo-container {
+      margin: 40px 0;
+    }
+
+    .photo-container img {
+      width: 100%; /* 图片宽度适应容器 */
+      max-width: 720px; /* 最大宽度限制为 720px，避免图片过大 */
+      border-radius: 6px;
+      margin-bottom: 20px; /* 图片之间留出间距 */
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 26px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 15px;
+      border: 1px solid #26b7bc; /* 按钮边框改为 #26b7bc */
+      color: #26b7bc; /* 按钮文字颜色改为 #26b7bc */
+      transition: all 0.2s ease;
+    }
+
+    .btn.primary {
+      background: #26b7bc; /* 按钮背景改为 #26b7bc */
+      color: #ffffff;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="logo">
+    <img src="logo.png" alt="Saikang Medical Logo"> <!-- logo 图片 -->
+  </div>
+
+  <h1 id="title">Thank You for Visiting Saikang Medical</h1>
+
+  <!-- "Dear [Customer Name]," 左对齐 -->
+  <p class="greeting">Dear [Customer Name],</p>
+
+  <div class="intro" id="intro">
+    <p>
+      Thank you very much for taking the time to visit Saikang Medical. It was a great pleasure to welcome you and introduce our facilities, products, and team.
+    </p>
+    
+    <p>
+      We truly appreciated the open and constructive discussions during your visit. Your insights and feedback are highly valuable to us and help strengthen our long-term cooperation.
+    </p>
+  </div>
+
+  <!-- 图片竖直排列，所有图片和正文宽度一致 -->
+  <div class="photo-container">
+    <img src="visit1.JPG" alt="Customer Visit 1">
+    <img src="visit2.JPG" alt="Customer Visit 2">
+    <img src="visit3.JPG" alt="Customer Visit 3">
+  </div>
+
+  <p class="intro">
+    We look forward to continuing our communication and exploring further opportunities to work together.
+  </p>
+
+  <div class="buttons">
+    <a class="btn primary" href="https://saikangmedical.com/en/catalogues/" target="_blank" id="catalogueBtn">
+      Download Product Catalogue
+    </a>
+    <a class="btn" href="https://saikangmedical.com/en/contact/" target="_blank" id="contactBtn">
+      Contact Our Team
+    </a>
+  </div>
+
+  <footer id="footer">
+    © Saikang Medical · Dedicated to Better Healthcare
+  </footer>
+
+</div>
+
+<script>
+  const lang = navigator.language || navigator.userLanguage;
+  const today = new Date();
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+  document.getElementById("visitDate").innerText =
+    today.toLocaleDateString(lang, options);
+
+  const content = {
+    en: {
+      title: "Thank You for Visiting Saikang Medical",
+      intro:
+        "Thank you very much for taking the time to visit Saikang Medical. It was a great pleasure to welcome you and introduce our facilities, products, and team. We truly appreciated the open and constructive discussions during your visit. Your insights and feedback are highly valuable to us and help strengthen our long-term cooperation.",
+      catalogue: "Download Product Catalogue",
+      contact: "Contact Our Team",
+      footer: "© Saikang Medical · Dedicated to Better Healthcare"
+    },
+    es: {
+      title: "Gracias por Visitar Saikang Medical",
+      intro:
+        "Fue un placer recibirle en Saikang Medical. Gracias por tomarse el tiempo de visitarnos y por las valiosas conversaciones. Esperamos construir una cooperación sólida y a largo plazo.",
+      catalogue: "Descargar Catálogo de Productos",
+      contact: "Contactar con Nuestro Equipo",
+      footer: "© Saikang Medical · Comprometidos con una Mejor Atención Médica"
+    },
+    fr: {
+      title: "Merci de Votre Visite chez Saikang Medical",
+      intro:
+        "Ce fut un réel plaisir de vous accueillir chez Saikang Medical. Merci pour votre visite et pour les échanges constructifs. Nous nous réjouissons de développer une coopération durable et fructueuse.",
+      catalogue: "Télécharger le Catalogue Produits",
+      contact: "Contacter Notre Équipe",
+      footer: "© Saikang Medical · Engagés pour une Meilleure Santé"
+    }
+  };
+
+  let langKey = "en";
+  if (lang.startsWith("es")) langKey = "es";
+  if (lang.startsWith("fr")) langKey = "fr";
+
+  document.getElementById("title").innerText = content[langKey].title;
+  document.getElementById("intro").innerText = content[langKey].intro;
+  document.getElementById("catalogueBtn").innerText = content[langKey].catalogue;
+  document.getElementById("contactBtn").innerText = content[langKey].contact;
+  document.getElementById("footer").innerText = content[langKey].footer;
+</script>
+
+</body>
+</html>
